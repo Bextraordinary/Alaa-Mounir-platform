@@ -1,32 +1,22 @@
-const CACHE_NAME = "alaa-munir-v1";
+const CACHE_NAME = "alaa-munir-v3";
 const urlsToCache = [
   "./",
   "./index.html",
+  "./manifest.json",
   "./ss.png",
   "./aa.png",
   "./nn.png",
-  "./takhrij.mp4",
   "./sawt.mp3"
 ];
 
 self.addEventListener("install", event => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => {
-      return cache.addAll(urlsToCache).catch(err => {
-        console.log('Cache failed:', err);
-      });
-    })
+    caches.open(CACHE_NAME).then(cache => cache.addAll(urlsToCache))
   );
 });
 
 self.addEventListener("fetch", event => {
   event.respondWith(
-    caches.match(event.request).then(response => {
-      return response || fetch(event.request);
-    })
+    caches.match(event.request).then(response => response || fetch(event.request))
   );
-});
-
-self.addEventListener("activate", event => {
-  event.waitUntil(self.clients.claim());
 });
