@@ -1,0 +1,15 @@
+{
+  "name": "الاء منير",
+  "short_name": "الاء منير",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#8e24aa",
+  "theme_color": "#8e24aa",
+  "icons": [
+    {
+      "src": "ss.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
