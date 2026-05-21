@@ -5,8 +5,7 @@ const urlsToCache = [
   "./ss.png",
   "./aa.png",
   "./nn.png",
-  "./sawt.mp3",
-  "./takhrij.mp4"
+  "./sawt.mp3"
 ];
 
 self.addEventListener("install", event => {
