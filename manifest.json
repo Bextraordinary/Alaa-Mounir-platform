@@ -1,11 +1,16 @@
 {
-  "name": "الاء منير",
+  "name": "الاء منير - منصة إعلامية",
   "short_name": "الاء منير",
   "start_url": ".",
   "display": "standalone",
-  "background_color": "#8e24aa",
+  "background_color": "#f5f7fa",
   "theme_color": "#8e24aa",
   "icons": [
+    {
+      "src": "ss.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
     {
       "src": "ss.png",
       "sizes": "512x512",
