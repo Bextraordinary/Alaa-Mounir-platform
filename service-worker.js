@@ -3,16 +3,18 @@ const urlsToCache = [
   "./",
   "./index.html",
   "./ss.png",
+  "./aa.png",
   "./nn.png",
-  "./w.jpg"'
-  "./takhrij.mp4"'
-  "./sawt.mp3"'
+  "./sawt.mp3",
+  "./takhrij.mp4"
 ];
 
 self.addEventListener("install", event => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
-      return cache.addAll(urlsToCache);
+      return cache.addAll(urlsToCache).catch(err => {
+        console.log('Cache failed:', err);
+      });
     })
   );
 });
@@ -23,4 +25,8 @@ self.addEventListener("fetch", event => {
       return response || fetch(event.request);
     })
   );
+});
+
+self.addEventListener("activate", event => {
+  event.waitUntil(self.clients.claim());
 });
